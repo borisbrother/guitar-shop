@@ -1,6 +1,6 @@
 'use strict';
 import { CATALOG } from '../constants/catalog';
-import '../constants/root';
+import { ROOT } from '../constants/root';
 import '../utils/localStorgeUtil';
 
 import '../components/Header/Header';
@@ -9,4 +9,5 @@ import '../components/Shopping/Shopping';
 
 // Main code
 
-new Products().render();
+const products = new Products(ROOT.products);
+products.render();
