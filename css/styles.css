@@ -89,8 +89,99 @@ h6 {
   font-size: inherit;
 }
 
+#products {
+  padding: 60px 0;
+}
+
+.products__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.products__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+.products__item img {
+  max-width: 100%;
+}
+
+.products__inner {
+  height: 100%;
+  padding: 15px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
+          box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
+
+.products__title {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.products__img {
+  margin-bottom: 25px;
+}
+
+.products__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products__footer button {
+  border-radius: 5px;
+  padding: 7px 12px;
+  font-size: 12px;
+  background-color: #ffc559;
+  -webkit-transition: all .175s;
+  -o-transition: all .175s;
+  transition: all .175s;
+}
+
+.products__footer button:hover {
+  background-color: #ffb326;
+}
+
+.products__price {
+  font-size: 12px;
+  font-weight: 500;
+}
+
 body {
-  font-family: sans-serif;
-  line-height: 1.7;
+  font-family: "Rubik",sans-serif;
+  line-height: 1.3;
   background-color: #f8f9fa;
+  font-weight: 400;
+}
+
+[class$=container] {
+  max-width: 1200px;
+  padding: 0 10px;
+  margin: 0 auto;
 }

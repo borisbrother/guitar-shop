@@ -16,7 +16,7 @@ export const CATALOG = [
     id: 'el3',
     productName:
       'Ibanez Q52-LBM Безголовая электрогитара, цвет - насыщенный синий.',
-    img: 'https://i.ibb.co/kcjDddN/guitar03.webp',
+    img: 'https://i.ibb.co/hBBdJFY/guitar03.webp',
     price: 108000,
   },
   {
@@ -55,7 +55,7 @@ export const CATALOG = [
     id: 'el9',
     productName:
       'Ibanez Q52-LBM Безголовая электрогитара, цвет - насыщенный синий.',
-    img: 'https://i.ibb.co/kcjDddN/guitar03.webp',
+    img: 'https://i.ibb.co/hBBdJFY/guitar03.webp',
     price: 108000,
   },
   {

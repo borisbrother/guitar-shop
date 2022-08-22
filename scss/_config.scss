@@ -1,2 +1,9 @@
 /* Variables */
 $color-light: #f8f9fa;
+$color-white: #ffffff;
+$color-secondary: #ffc559;
+
+/* Mixins */
+@mixin transition($duration: 0.175s) {
+  transition: all $duration;
+}
