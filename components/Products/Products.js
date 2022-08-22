@@ -21,7 +21,9 @@ export class Products {
           <img src="${img}" alt="${productName}" class="products__img">
           <div class="products__footer">          
             <span class="products__price">${this.formatPrice(price)}</span>
-            <button>Добавить в корзину</button>
+            <button>
+              <img src="../images/cart4.svg"> В корзину
+            </button>
           </div>
         <div>
       </li>`;

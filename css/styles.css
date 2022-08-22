@@ -164,12 +164,19 @@ h6 {
   transition: all .175s;
 }
 
+.products__footer button img {
+  margin-right: 5px;
+  -webkit-transform: translateY(-2px);
+      -ms-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
 .products__footer button:hover {
   background-color: #ffb326;
 }
 
 .products__price {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
 }
 
