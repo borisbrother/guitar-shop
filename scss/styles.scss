@@ -1,0 +1,16 @@
+// @import './fonts';
+// @import './icons';
+@import "./reset";
+@import "./config";
+
+@import "../components/Header/Header";
+@import "../components/Products/Products";
+@import "../components/Shopping/Shopping";
+
+// common
+
+body {
+  font-family: sans-serif;
+  line-height: 1.7;
+  background-color: $color-light;
+}
