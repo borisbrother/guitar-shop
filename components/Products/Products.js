@@ -1,6 +1,8 @@
 import { CATALOG } from '../../constants/catalog';
 
-export class Products {
+import { ROOT } from '../../constants/root';
+
+class Products {
   constructor(el) {
     this.el = el;
   }
@@ -20,7 +22,13 @@ export class Products {
           <span class="products__title">${productName}</span>
           <img src="${img}" alt="${productName}" class="products__img">
           <div class="products__footer">          
-            <span class="products__price">${this.formatPrice(price)}</span>
+            <div class="products__price">
+            <img src="../images/plugin.png" class="products__icon">
+            ${price.toLocaleString('ru-RU', {
+              style: 'currency',
+              currency: 'RUR',
+            })}
+            </div>
             <button>
               <img src="../images/cart4.svg"> В корзину
             </button>
@@ -34,3 +42,5 @@ export class Products {
     );
   }
 }
+
+export const products = new Products(ROOT.products);
