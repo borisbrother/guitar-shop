@@ -36,11 +36,6 @@ class Products {
         <div>
       </li>`;
   }
-  formatPrice(number) {
-    return (
-      number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ') + ' руб.'
-    );
-  }
 }
 
 export const products = new Products(ROOT.products);
