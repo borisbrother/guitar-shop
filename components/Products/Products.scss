@@ -3,15 +3,11 @@
 }
 .products {
   &__container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
   }
   &__item {
-    flex: 0 0 25%;
-    padding: 0 15px;
-    margin-bottom: 30px;
-
     img {
       max-width: 100%;
     }
@@ -33,27 +29,27 @@
   &__img {
     margin-bottom: 25px;
   }
-  &__footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    button {
-      border-radius: 5px;
-      padding: 7px 12px;
-      font-size: 12px;
-      background-color: $color-secondary;
-      @include transition;
-      img {
-        margin-right: 5px;
-        transform: translateY(-2px);
-      }
+  &__btn {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 12px;
+    background-color: $color-secondary;
+    display: block;
+    text-align: center;
+    // width: 100%;
+    // margin: auto;
+    @include transition;
+    img {
+      margin-right: 5px;
+      transform: translateY(-2px);
     }
-    button:hover {
+    &:hover {
       background-color: darken($color-secondary, 10%);
     }
   }
   &__price {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
+    margin-bottom: 12px;
   }
 }

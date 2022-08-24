@@ -1,36 +1,37 @@
-import { CATALOG } from '../../constants/catalog';
+import { CATALOG } from "../../constants/catalog";
 
 export class Products {
   constructor(el) {
     this.el = el;
   }
   render() {
-    let catalogContainer = document.createElement('ul');
-    catalogContainer.classList.add('products__container');
-    let htmlCatalog = '';
+    let catalogContainer = document.createElement("ul");
+    catalogContainer.classList.add("products__container");
+    let htmlCatalog = "";
     CATALOG.forEach((element) => {
       htmlCatalog += this.renderElementLi(element);
     });
-    catalogContainer.insertAdjacentHTML('afterbegin', htmlCatalog);
+    catalogContainer.insertAdjacentHTML("afterbegin", htmlCatalog);
     this.el.appendChild(catalogContainer);
   }
   renderElementLi({ id, productName, price, img }) {
     return `<li class="products__item">
         <div class="products__inner">
           <span class="products__title">${productName}</span>
-          <img src="${img}" alt="${productName}" class="products__img">
-          <div class="products__footer">          
-            <span class="products__price">${this.formatPrice(price)}</span>
-            <button>
-              <img src="../images/cart4.svg"> В корзину
-            </button>
-          </div>
+          <img src="${img}" alt="${productName}" class="products__img">                   
+          <div class="products__price">${price.toLocaleString("ru-RU", {
+            style: "currency",
+            currency: "RUR",
+          })}</div>
+          <button class="products__btn">
+            <img src="../images/cart4.svg"> В корзину
+          </button>          
         <div>
       </li>`;
   }
   formatPrice(number) {
     return (
-      number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ') + ' руб.'
+      number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ") + " руб."
     );
   }
 }
