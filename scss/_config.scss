@@ -1,7 +1,20 @@
 /* Variables */
 $color-light: #f8f9fa;
 $color-white: #ffffff;
-$color-secondary: #ffc559;
+$color-secondary: #6ec94d;
+$color-primary: #333333;
+$color-unaccent: #777777;
+
+$gradient-button: linear-gradient(90deg, #feca95 0%, #f88800 100%);
+
+$border-radius: 3px;
+
+$spacing-small: 12px;
+$spacing-medium: 18px;
+$spacing-big: 36px;
+$spacing-large: 54px;
+
+$shadow-box: 0 0 20px rgba(0, 0, 0, 0.1);
 
 /* Mixins */
 @mixin transition($duration: 0.175s) {

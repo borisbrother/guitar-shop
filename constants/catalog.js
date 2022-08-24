@@ -23,7 +23,7 @@ export const CATALOG = [
     id: 'el4',
     productName: 'Homage HEG320SB Электрогитара.',
     img: 'https://i.ibb.co/wsp99zL/guitar04.webp',
-    price: 9960,
+    price: 9960.5,
   },
   {
     id: 'el5',
