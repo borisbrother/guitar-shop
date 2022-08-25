@@ -11,7 +11,7 @@ import '../components/Shopping/Shopping';
 
 // const products = new Products(ROOT.products);
 products.render();
-localStorageUtil.handleProduct('el12');
+// console.log(localStorageUtil.switchProduct('el12'));
 // localStorageUtil.deleteProduct('el3');
 // localStorageUtil.deleteProduct('el2');
 // console.log(localStorageUtil.getProducts());

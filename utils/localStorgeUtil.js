@@ -19,14 +19,16 @@ class LocalStorgeUtil {
     delete this.values[id];
     this.saveProducts();
   }
-  handleProduct(id) {
+  switchProduct(id) {
+    let status;
     if (id in this.values) {
       this.deleteProduct(id);
-      return false;
+      status = false;
     } else {
       this.addProduct(id);
-      return true;
+      status = true;
     }
+    return { status, products: this.values };
   }
 }
 

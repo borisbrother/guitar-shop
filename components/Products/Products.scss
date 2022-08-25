@@ -57,6 +57,9 @@
       &.active {
         background-image: $gradient-button;
         border-color: transparent;
+        &:hover {
+          background-image: $gradient-button-hover;
+        }
       }
     }
     button:hover {

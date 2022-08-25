@@ -1,22 +1,40 @@
 import { CATALOG } from '../../constants/catalog';
 
 import { ROOT } from '../../constants/root';
+import { localStorageUtil } from '../../utils/localStorgeUtil';
 
 class Products {
   constructor(el) {
     this.el = el;
+    this.classNameActive = 'active';
+    this.labelAdd = 'Удалить из корзины';
+    this.labelDelete = 'Добавить в корзину';
   }
   render() {
+    const productStore = localStorageUtil.getProducts();
     let catalogContainer = document.createElement('ul');
     catalogContainer.classList.add('products__container');
     let htmlCatalog = '';
     CATALOG.forEach((element) => {
-      htmlCatalog += this.renderElementLi(element);
+      const options = {
+        activeClass: '',
+        activeText: '',
+      };
+
+      if (element.id in productStore) {
+        options.activeClass = this.classNameActive;
+        options.activeText = this.labelAdd;
+      } else {
+        options.activeClass = '';
+        options.activeText = this.labelDelete;
+      }
+      htmlCatalog += Products.renderElementLi(element, options);
     });
     catalogContainer.insertAdjacentHTML('afterbegin', htmlCatalog);
     this.el.appendChild(catalogContainer);
   }
-  renderElementLi({ id, productName, price, img }) {
+
+  static renderElementLi({ id, productName, price, img }, options) {
     return `<li class="products__item">
         <div class="products__inner">
           <span class="products__title">${productName}</span>
@@ -29,8 +47,8 @@ class Products {
               currency: 'RUR',
             })}
             </div>
-            <button>
-              <img src="../images/cart4.svg"> В корзину
+            <button class="${options.activeClass}">
+              <img src="../images/cart4.svg"> ${options.activeText}
             </button>
           </div>
         <div>

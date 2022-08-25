@@ -166,6 +166,12 @@ h6 {
   border-color: transparent;
 }
 
+.products__footer button.active:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#feca95eb), to(#f88800ee));
+  background-image: -o-linear-gradient(left, #feca95eb 0%, #f88800ee 100%);
+  background-image: linear-gradient(90deg, #feca95eb 0%, #f88800ee 100%);
+}
+
 .products__footer button:hover {
   background-image: -webkit-gradient(linear, left top, right top, from(#feca95), to(#f88800));
   background-image: -o-linear-gradient(left, #feca95 0%, #f88800 100%);
