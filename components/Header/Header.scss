@@ -1,0 +1,30 @@
+#header {
+    background-color: #ccc;
+}
+
+.header {
+    &__container {
+        height: 45px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__cart {
+        color: #333;
+        display: flex;
+        align-items: center;
+
+    }
+
+    &__icon {
+        margin-right: 5px;
+        transform: translateY(-1px);
+    }
+
+    &__counter {
+        min-width: 20px;
+        text-align: right;
+
+    }
+}
