@@ -7,7 +7,7 @@ import { header } from "../Header/Header";
 class Products {
   constructor(el) {
     this.el = el;
-    this.products = CATALOG.reduce((acc, product) => {
+    this.productList = CATALOG.reduce((acc, product) => {
       acc[[product.id]] = product;
       return acc;
     }, {});
@@ -20,6 +20,7 @@ class Products {
     };
   }
   render() {
+    this.el.innerHTML = '';
     const productStore = localStorageUtil.getProducts();
     const catalogContainer = document.createElement("ul");
     catalogContainer.classList.add("products__container");
@@ -42,7 +43,7 @@ class Products {
     this.el.appendChild(catalogContainer);
   }
   getProduct(id) {
-    return this.products[id];
+    return this.productList[id];
   }
 
   static renderElementLi({ id, productName, price, img }, options) {

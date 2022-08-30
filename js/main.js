@@ -5,10 +5,10 @@ import { localStorageUtil } from '../utils/localStorgeUtil';
 
 import { header } from '../components/Header/Header';
 import { products } from '../components/Products/Products';
-import '../components/Shopping/Shopping';
+import { shopping } from '../components/Shopping/Shopping';
 
 // Main code
 
 products.render();
 header.render();
-console.log(products.getProduct('el12'));
+shopping.render();

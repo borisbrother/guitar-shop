@@ -14,17 +14,18 @@
         color: #333;
         display: flex;
         align-items: center;
-
+        line-height: 0;
     }
 
     &__icon {
         margin-right: 5px;
-        transform: translateY(-1px);
+        transform: translateY(-3px);
     }
 
     &__counter {
         min-width: 20px;
         text-align: right;
+
 
     }
 }
