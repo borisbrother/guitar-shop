@@ -1,5 +1,5 @@
 export const ROOT = {
   products: document.querySelector('#products'),
   header: document.querySelector('#header'),
-  shoping: document.querySelector('#shoping'),
+  shopping: document.querySelector('#shopping'),
 };
