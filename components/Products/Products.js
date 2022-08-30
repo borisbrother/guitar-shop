@@ -11,12 +11,12 @@ class Products {
     catalogContainer.classList.add("products__container");
     let htmlCatalog = "";
     CATALOG.forEach((element) => {
-      htmlCatalog += this.renderElementLi(element);
+      htmlCatalog += Products.renderElementLi(element);
     });
     catalogContainer.insertAdjacentHTML("afterbegin", htmlCatalog);
     this.el.appendChild(catalogContainer);
   }
-  renderElementLi({ id, productName, price, img }) {
+  static renderElementLi({ id, productName, price, img }) {
     return `<li class="products__item">
         <div class="products__inner">
           <span class="products__title">${productName}</span>
