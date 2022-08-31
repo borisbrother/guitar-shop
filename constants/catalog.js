@@ -1,6 +1,7 @@
 class Catalog {
   async getCatalog() {
-    let response = await fetch('server/catalog.json');
+    let response = await fetch('http://myjson.dit.upm.es/api/bins/9g4s');
+    // let response = await fetch('server/catalog.json');
     if (response.status !== 200) throw new Error('Ошибка подключения');
     let jsonData = await response.json();
     // Promise.reject('Ошибка');
