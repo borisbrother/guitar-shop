@@ -1,7 +1,9 @@
 class Catalog {
   async getCatalog() {
     let response = await fetch('server/catalog.json');
+    if (response.status !== 200) throw new Error('Ошибка подключения');
     let jsonData = await response.json();
+    // Promise.reject('Ошибка');
     return jsonData;
   }
 }

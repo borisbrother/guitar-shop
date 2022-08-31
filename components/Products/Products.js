@@ -11,11 +11,15 @@ class Products {
     this.indexID();
   }
   async indexID() {
-    let cat = await catalog.getCatalog();
-    this.productList = cat.reduce((acc, product) => {
-      acc[[product.id]] = product;
-      return acc;
-    }, {});
+    try {
+      let cat = await catalog.getCatalog();
+      this.productList = cat.reduce((acc, product) => {
+        acc[[product.id]] = product;
+        return acc;
+      }, {});
+    } catch (err) {
+      console.log(err);
+    }
   }
   static labels() {
     return {
@@ -29,24 +33,30 @@ class Products {
     const productStore = localStorageUtil.getProducts();
     const catalogContainer = document.createElement('ul');
     catalogContainer.classList.add('products__container');
-    let cat = await catalog.getCatalog();
-    cat.forEach((element) => {
-      const options = {
-        activeClass: '',
-        activeText: '',
-      };
+    try {
+      let cat = await catalog.getCatalog();
+      cat.forEach((element) => {
+        const options = {
+          activeClass: '',
+          activeText: '',
+        };
 
-      if (element.id in productStore) {
-        options.activeClass = Products.labels().activeClassLabel;
-        options.activeText = Products.labels().removeLabel;
-      } else {
-        options.activeClass = '';
-        options.activeText = Products.labels().addLabel;
-      }
-      catalogContainer.appendChild(Products.renderElementLi(element, options));
-    });
-    // catalogContainer.insertAdjacentHTML('afterbegin', htmlCatalog);
-    this.el.appendChild(catalogContainer);
+        if (element.id in productStore) {
+          options.activeClass = Products.labels().activeClassLabel;
+          options.activeText = Products.labels().removeLabel;
+        } else {
+          options.activeClass = '';
+          options.activeText = Products.labels().addLabel;
+        }
+        catalogContainer.appendChild(
+          Products.renderElementLi(element, options)
+        );
+      });
+      // catalogContainer.insertAdjacentHTML('afterbegin', htmlCatalog);
+      this.el.appendChild(catalogContainer);
+    } catch (err) {
+      console.log(err);
+    }
   }
   getProduct(id) {
     return this.productList[id];
