@@ -1,8 +1,8 @@
-import { CATALOG } from "../../constants/catalog";
+import { CATALOG } from '../../constants/catalog';
 
-import { ROOT } from "../../constants/root";
-import { localStorageUtil } from "../../utils/localStorgeUtil";
-import { header } from "../Header/Header";
+import { ROOT } from '../../constants/root';
+import { localStorageUtil } from '../../utils/localStorgeUtil';
+import { header } from '../Header/Header';
 
 class Products {
   constructor(el) {
@@ -14,27 +14,27 @@ class Products {
   }
   static labels() {
     return {
-      activeClassLabel: "active",
-      addLabel: "Добавить в корзину",
-      removeLabel: "Удалить из корзины",
+      activeClassLabel: 'active',
+      addLabel: 'Добавить в корзину',
+      removeLabel: 'Удалить из корзины',
     };
   }
   render() {
     this.el.innerHTML = '';
     const productStore = localStorageUtil.getProducts();
-    const catalogContainer = document.createElement("ul");
-    catalogContainer.classList.add("products__container");
+    const catalogContainer = document.createElement('ul');
+    catalogContainer.classList.add('products__container');
     CATALOG.forEach((element) => {
       const options = {
-        activeClass: "",
-        activeText: "",
+        activeClass: '',
+        activeText: '',
       };
 
       if (element.id in productStore) {
         options.activeClass = Products.labels().activeClassLabel;
         options.activeText = Products.labels().removeLabel;
       } else {
-        options.activeClass = "";
+        options.activeClass = '';
         options.activeText = Products.labels().addLabel;
       }
       catalogContainer.appendChild(Products.renderElementLi(element, options));
@@ -47,23 +47,23 @@ class Products {
   }
 
   static renderElementLi({ id, productName, price, img }, options) {
-    const liElem = document.createElement("li");
-    liElem.classList.add("products__item");
+    const liElem = document.createElement('li');
+    liElem.classList.add('products__item');
     liElem.innerHTML = `<div class="products__inner">
       <span class="products__title">${productName}</span>
       <img src="${img}" alt="${productName}" class="products__img">
       <div class="products__footer">          
         <div class="products__price">
-        <img src="../images/plugin.png" class="products__icon">
-        ${price.toLocaleString("ru-RU", {
-          style: "currency",
-          currency: "RUR",
+        <img src="images/plugin.png" class="products__icon">
+        ${price.toLocaleString('ru-RU', {
+          style: 'currency',
+          currency: 'RUR',
         })}
         </div>
         <button class="${options.activeClass}">${options.activeText}</button>
       </div>
     <div>`;
-    liElem.querySelector("button").addEventListener("click", (e) => {
+    liElem.querySelector('button').addEventListener('click', (e) => {
       let { status } = localStorageUtil.switchProduct(id);
       if (status) {
         e.target.classList.add(Products.labels().activeClassLabel);

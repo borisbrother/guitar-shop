@@ -2,7 +2,11 @@ import { ROOT } from '../../constants/root';
 import { localStorageUtil } from '../../utils/localStorgeUtil';
 import { header } from '../Header/Header';
 import { products } from '../Products/Products';
-import { enableBodyScroll } from 'body-scroll-lock';
+import {
+  enableBodyScroll,
+  disableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock';
 
 class Shopping {
   constructor(el) {
@@ -57,7 +61,7 @@ class Shopping {
       style: 'currency',
       currency: 'RUR',
     })}</span>
-    <span class="shopping__button"><button><img src="images/cart-remove.svg"/></button></span>`;
+    <span class="shopping__button"><button><img src="./images/cart-remove.svg"/></button></span>`;
     li.querySelector('button').addEventListener('click', (e) => {
       e.stopPropagation();
       e.preventDefault();
