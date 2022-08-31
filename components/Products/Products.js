@@ -1,4 +1,4 @@
-import { CATALOG } from '../../constants/catalog';
+import { catalog } from '../../constants/catalog';
 
 import { ROOT } from '../../constants/root';
 import { localStorageUtil } from '../../utils/localStorgeUtil';
@@ -7,7 +7,12 @@ import { header } from '../Header/Header';
 class Products {
   constructor(el) {
     this.el = el;
-    this.productList = CATALOG.reduce((acc, product) => {
+    this.productList = {};
+    this.indexID();
+  }
+  async indexID() {
+    let cat = await catalog.getCatalog();
+    this.productList = cat.reduce((acc, product) => {
       acc[[product.id]] = product;
       return acc;
     }, {});
@@ -19,12 +24,13 @@ class Products {
       removeLabel: 'Удалить из корзины',
     };
   }
-  render() {
+  async render() {
     this.el.innerHTML = '';
     const productStore = localStorageUtil.getProducts();
     const catalogContainer = document.createElement('ul');
     catalogContainer.classList.add('products__container');
-    CATALOG.forEach((element) => {
+    let cat = await catalog.getCatalog();
+    cat.forEach((element) => {
       const options = {
         activeClass: '',
         activeText: '',

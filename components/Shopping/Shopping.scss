@@ -9,15 +9,13 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s;
+  // transition: all 0.05s;
 
   &.active {
     opacity: 1;
     visibility: visible;
 
-    .shopping__container {
-      transform: translateY(0);
-    }
+
   }
 }
 
@@ -42,12 +40,13 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
     max-height: 50%;
     overflow-y: auto;
-    transform: translateY(-50%);
   }
 
   &__element {
     display: flex;
     // justify-content: space-between;
+    opacity: 1;
+    transition: opacity 200ms linear;
 
     &:not(:last-child) {
       margin-bottom: 20px;

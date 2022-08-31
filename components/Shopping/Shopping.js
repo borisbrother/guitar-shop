@@ -36,6 +36,7 @@ class Shopping {
     shoppingContainer.appendChild(liHeader);
     Object.keys(localStorageUtil.values).forEach((key) => {
       const product = products.getProduct(key);
+      if (!product) return;
       const qty = localStorageUtil.values[key];
       shoppingContainer.appendChild(Shopping.renderLi(counter, product, qty));
       counter++;
@@ -66,10 +67,13 @@ class Shopping {
       e.stopPropagation();
       e.preventDefault();
       localStorageUtil.deleteProduct(id);
-      shopping.render();
       console.log(products);
       products.render();
       header.render();
+      li.style.opacity = 0;
+      setTimeout(() => {
+        shopping.render();
+      }, 200);
       //   li.parentNode.removeChild(li);
     });
     return li;
