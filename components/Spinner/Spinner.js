@@ -6,6 +6,7 @@ class Spinner {
   }
   render() {
     const html = `<div class="spinner___icon"><img src="images/loader.svg"/></div>
+    <div class="spinner__logo"><img src="images/spinner.png" /></div>
     `;
 
     this.el.innerHTML = html;
