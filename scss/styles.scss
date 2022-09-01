@@ -25,14 +25,7 @@ body {
   margin: 0 auto;
 }
 
-.lock {
-  // position: fixed;
-  overflow-y: scroll;
 
-  #header {
-    overflow-y: scroll;
-  }
-}
 
 
 
@@ -42,3 +35,12 @@ body {
 @import "../components/Spinner/spinner.scss";
 
 // common
+
+.lock {
+  // position: fixed;
+  overflow-y: scroll;
+
+  #header {
+    // overflow-y: scroll;
+  }
+}

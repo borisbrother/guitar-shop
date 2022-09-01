@@ -1,3 +1,4 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { catalog } from '../../constants/catalog';
 
 import { ROOT } from '../../constants/root';

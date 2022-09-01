@@ -110,14 +110,6 @@ body {
   margin: 0 auto;
 }
 
-.lock {
-  overflow-y: scroll;
-}
-
-.lock #header {
-  overflow-y: scroll;
-}
-
 #header {
   background-color: #ccc;
   position: fixed;
@@ -423,6 +415,9 @@ body {
   left: 0;
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
 }
 
 #spinner.visible {
@@ -441,9 +436,6 @@ body {
   height: 48px;
 }
 
-.spinner__logo img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.lock {
+  overflow-y: scroll;
 }
