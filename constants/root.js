@@ -3,4 +3,5 @@ export const ROOT = {
   header: document.querySelector('#header'),
   shopping: document.querySelector('#shopping'),
   spinner: document.querySelector('#spinner'),
+  error: document.querySelector('#error'),
 };

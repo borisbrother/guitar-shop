@@ -7,6 +7,7 @@ import { header } from '../components/Header/Header';
 import { products } from '../components/Products/Products';
 import { shopping } from '../components/Shopping/Shopping';
 import { spinner } from '../components/Spinner/Spinner';
+import { ErrorFetch } from '../components/Error/Error';
 
 // Main code
 

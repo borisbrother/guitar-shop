@@ -3,6 +3,7 @@ import { catalog } from '../../constants/catalog';
 
 import { ROOT } from '../../constants/root';
 import { localStorageUtil } from '../../utils/localStorgeUtil';
+import { ErrorFetch } from '../Error/Error';
 import { header } from '../Header/Header';
 import { spinner } from '../Spinner/Spinner';
 
@@ -59,7 +60,9 @@ class Products {
       // catalogContainer.insertAdjacentHTML('afterbegin', htmlCatalog);
       this.el.appendChild(catalogContainer);
     } catch (err) {
-      console.log(err);
+      console.error(err.message);
+      err.render();
+      spinner.hide();
     }
   }
   getProduct(id) {

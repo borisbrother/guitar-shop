@@ -28,7 +28,7 @@ class Spinner {
     this.el.classList.add('visible');
   }
   hide() {
-    disableBodyScroll(this.el);
+    // disableBodyScroll(this.el);
     this.el.classList.remove('visible');
   }
 }

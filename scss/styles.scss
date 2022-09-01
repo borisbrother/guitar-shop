@@ -33,6 +33,7 @@ body {
 @import "../components/Products/Products";
 @import "../components/Shopping/Shopping";
 @import "../components/Spinner/spinner.scss";
+@import "../components/Error/Error.scss";
 
 // common
 
@@ -41,6 +42,7 @@ body {
   overflow-y: scroll;
 
   #header {
-    // overflow-y: scroll;
+    overflow-y: scroll;
+
   }
 }
