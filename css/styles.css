@@ -423,9 +423,6 @@ body {
   left: 0;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all .175s;
-  -o-transition: all .175s;
-  transition: all .175s;
 }
 
 #spinner.visible {
