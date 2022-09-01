@@ -3,11 +3,7 @@
 @import "./reset";
 @import "./config";
 
-@import "../components/Header/Header";
-@import "../components/Products/Products";
-@import "../components/Shopping/Shopping";
 
-// common
 html {
   height: 100%;
   width: 100vw;
@@ -37,3 +33,12 @@ body {
     overflow-y: scroll;
   }
 }
+
+
+
+@import "../components/Header/Header";
+@import "../components/Products/Products";
+@import "../components/Shopping/Shopping";
+@import "../components/Spinner/spinner.scss";
+
+// common

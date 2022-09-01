@@ -3,6 +3,7 @@ import { catalog } from '../../constants/catalog';
 import { ROOT } from '../../constants/root';
 import { localStorageUtil } from '../../utils/localStorgeUtil';
 import { header } from '../Header/Header';
+import { spinner } from '../Spinner/Spinner';
 
 class Products {
   constructor(el) {
@@ -34,7 +35,9 @@ class Products {
     const catalogContainer = document.createElement('ul');
     catalogContainer.classList.add('products__container');
     try {
+      spinner.show();
       let cat = await catalog.getCatalog();
+      spinner.hide();
       cat.forEach((element) => {
         const options = {
           activeClass: '',

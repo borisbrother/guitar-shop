@@ -14,6 +14,7 @@ class Shopping {
     this.el.addEventListener('click', (e) => {
       this.el.classList.remove('active');
       document.body.classList.remove('lock');
+      products.render();
       enableBodyScroll(document.body);
     });
   }
@@ -68,7 +69,6 @@ class Shopping {
       e.preventDefault();
       localStorageUtil.deleteProduct(id);
       console.log(products);
-      products.render();
       header.render();
       li.style.opacity = 0;
       setTimeout(() => {
