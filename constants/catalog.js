@@ -1,11 +1,24 @@
+import { ErrorFetch } from '../components/Error/Error';
+
 class Catalog {
   async getCatalog() {
-    let response = await fetch('http://myjson.dit.upm.es/api/bins/9g4s');
+    // let path = "http://myjson.dit.upm.es/api/bins/9g4s";
+    let path = 'server/catalog.json';
+    let response = await fetch(path);
     // let response = await fetch('server/catalog.json');
-    if (response.status !== 200) throw new Error('Ошибка подключения');
-    let jsonData = await response.json();
-    // Promise.reject('Ошибка');
-    return jsonData;
+    // if (response.status !== 200)
+
+    if (!response.ok)
+      throw new ErrorFetch(`Ошибка подключения`, 'Попробуйте зайти позже');
+    try {
+      let jsonData = await response.json();
+      return jsonData;
+    } catch (err) {
+      throw new ErrorFetch(
+        `Некорректный ответ от сервера`,
+        `Обратитесь к администратору сайта`
+      );
+    }
   }
 }
 

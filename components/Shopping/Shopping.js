@@ -69,7 +69,6 @@ class Shopping {
       e.preventDefault();
       localStorageUtil.deleteProduct(id);
       console.log(products);
-
       header.render();
       li.style.opacity = 0;
       setTimeout(() => {

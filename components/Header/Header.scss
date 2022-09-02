@@ -2,6 +2,9 @@
     background-color: #ccc;
     position: fixed;
     width: 100%;
+    transition: "overflow-y" 0s;
+    transition-delay: 1s;
+    z-index: 1;
 }
 
 .header {
